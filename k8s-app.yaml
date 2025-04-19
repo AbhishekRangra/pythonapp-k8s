@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: pythonapp
+  name: pythonapp 
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pythonapp
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: pythonapp
+    spec:
+      containers:
+      - name: pythonapp
+        image: abhishekrangra/pyabhi:v2
+        resources: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pythonapp-service
+  labels:
+    app: pythonapp-service
+spec:
+  selector:
+    app: pythonapp
+  ports:
+  - port: 80
+    targetPort: 5000
+  type: LoadBalancer
+
