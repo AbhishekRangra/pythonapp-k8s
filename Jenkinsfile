@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKERTAG = "v2"  // Set your Docker image tag here
+        DOCKERTAG = "v3"  // Set your Docker image tag here
     }
 
     stages {
