@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: pythonapp
-        image: abhishekrangra/pyabhi:v2
+        image: abhishekrangra/pyabhi:v3
         resources: {}
 ---
 apiVersion: v1
